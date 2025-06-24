@@ -68,5 +68,8 @@ async def upload(path: str, file: UploadFile):
 
 @app.get("/{path:path}")
 async def download(path: str):
-    file = single_file(safe(path))
+    dir = safe(path)
+    if not dir.exists():
+        raise HTTPException(HTTP_404_NOT_FOUND, "Not Found")
+    file = single_file(dir)
     return FileResponse(file, filename=file.name)
