@@ -1,0 +1,15 @@
+*.pyc
+*.json
+
+output/
+models/
+temp/
+app_tmp/
+storage/
+__pycache__/
+*.log
+*.pkl
+*.db
+*.csv
+*.tsv
+*.xlsx
